@@ -1,0 +1,1939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock 4</title>
+    <style>
+        /* ... (Your existing CSS styles) ... */
+
+        /* Futuristic Perplexity-Style Enhanced Theme */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+        /* Reset and base styles */
+        * {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            box-sizing: border-box;
+        }
+
+        /* Advanced CSS Variables for Consistent Theming */
+        :root {
+            /* Neon Colors */
+            --neon-blue: #00d4ff;
+            --neon-green: #00ff88;
+            --neon-purple: #8b5cf6;
+            --neon-orange: #ff6b35;
+            --neon-pink: #ff007f;
+
+            /* Background Gradients */
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #1a1a2e;
+            --bg-elevated: #16213e;
+            --bg-surface: #0f3460;
+            --bg-card: linear-gradient(145deg, #1a1a2e, #16213e);
+            --bg-glass: rgba(255, 255, 255, 0.02);
+
+            /* Text Colors */
+            --text-primary: #ffffff;
+            --text-secondary: #b8c5d1;
+            --text-muted: #64748b;
+            --text-accent: var(--neon-blue);
+
+            /* Border and Effects */
+            --border-primary: #334155;
+            --border-accent: var(--neon-blue);
+            --border-success: var(--neon-green);
+            --border-warning: var(--neon-orange);
+
+            /* Shadows and Glows */
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+            --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
+            --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.5);
+
+            --glow-blue: 0 0 20px rgba(0, 212, 255, 0.4);
+            --glow-green: 0 0 20px rgba(0, 255, 136, 0.4);
+            --glow-purple: 0 0 20px rgba(139, 92, 246, 0.4);
+            --glow-orange: 0 0 20px rgba(255, 107, 53, 0.4);
+
+            /* Animation Curves */
+            --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --ease-sharp: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Enhanced Body and Layout */
+        body {
+            background: var(--bg-primary);
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(0, 255, 136, 0.05) 0%, transparent 50%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Enhanced Main Container */
+        .container, body > * {
+            position: relative;
+        }
+
+        /* Ultra-Enhanced Home Button */
+        .home-button {
+            position: fixed !important;
+            top: 20px !important;
+            right: 20px !important;
+            padding: 14px 28px !important;
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple)) !important;
+            color: white !important;
+            border: 2px solid rgba(0, 212, 255, 0.3) !important;
+            border-radius: 16px !important;
+            cursor: pointer !important;
+            text-decoration: none !important;
+            font-weight: 700 !important;
+            font-size: 14px !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1px !important;
+            transition: all 0.4s var(--ease-bounce) !important;
+            box-shadow: var(--glow-blue), var(--shadow-lg) !important;
+            z-index: 1000 !important;
+            backdrop-filter: blur(20px) !important;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .home-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s;
+        }
+
+        .home-button:hover::before {
+            left: 100%;
+        }
+
+        .home-button:hover {
+            background: linear-gradient(135deg, #00b8e6, #7c3aed) !important;
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.8), var(--shadow-xl) !important;
+            transform: translateY(-4px) scale(1.02) !important;
+            border-color: var(--neon-blue) !important;
+        }
+
+        /* Ultra-Enhanced PDF Upload Section */
+        .pdf-upload-section {
+            margin: 25px 0 !important;
+            padding: 40px !important;
+            border: 2px dashed var(--neon-blue) !important;
+            border-radius: 20px !important;
+            text-align: center !important;
+            background: var(--bg-card) !important;
+            backdrop-filter: blur(20px) !important;
+            box-shadow: var(--shadow-lg) !important;
+            position: relative !important;
+            overflow: hidden !important;
+            transition: all 0.4s var(--ease-smooth) !important;
+        }
+
+        .pdf-upload-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.03), rgba(139, 92, 246, 0.03));
+            pointer-events: none;
+        }
+
+        .pdf-upload-section:hover {
+            border-color: var(--neon-green) !important;
+            box-shadow: var(--glow-green), var(--shadow-xl) !important;
+            transform: translateY(-2px) !important;
+        }
+
+        .pdf-upload-section h3 {
+            color: var(--text-primary) !important;
+            font-weight: 700 !important;
+            font-size: 18px !important;
+            margin-bottom: 20px !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.5px !important;
+        }
+
+        .pdf-upload-section input[type="file"] {
+            margin: 20px !important;
+            padding: 14px 20px !important;
+            background: var(--bg-elevated) !important;
+            border: 2px solid var(--border-primary) !important;
+            border-radius: 12px !important;
+            color: var(--text-primary) !important;
+            font-size: 14px !important;
+            font-weight: 500 !important;
+            transition: all 0.3s var(--ease-smooth) !important;
+            backdrop-filter: blur(10px) !important;
+        }
+
+        .pdf-upload-section input[type="file"]:hover {
+            border-color: var(--neon-blue) !important;
+            box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.1) !important;
+        }
+
+        .pdf-upload-section button {
+            background: linear-gradient(135deg, var(--neon-green), #00cc6a) !important;
+            color: white !important;
+            border: 2px solid rgba(0, 255, 136, 0.3) !important;
+            padding: 14px 32px !important;
+            border-radius: 12px !important;
+            cursor: pointer !important;
+            margin: 10px !important;
+            font-weight: 700 !important;
+            font-size: 14px !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.5px !important;
+            transition: all 0.4s var(--ease-bounce) !important;
+            box-shadow: var(--glow-green), var(--shadow-md) !important;
+            position: relative !important;
+            overflow: hidden !important;
+        }
+
+        .pdf-upload-section button:hover {
+            background: linear-gradient(135deg, #00e699, #00b359) !important;
+            box-shadow: 0 0 40px rgba(0, 255, 136, 0.8), var(--shadow-xl) !important;
+            transform: translateY(-3px) scale(1.02) !important;
+            border-color: var(--neon-green) !important;
+        }
+
+        /* Ultra-Enhanced General Buttons */
+        button:not(.home-button):not(.pdf-upload-section button):not(.question-nav-btn) {
+            background: var(--bg-card) !important;
+            color: var(--text-primary) !important;
+            border: 2px solid var(--border-primary) !important;
+            padding: 12px 24px !important;
+            border-radius: 12px !important;
+            cursor: pointer !important;
+            font-weight: 600 !important;
+            font-size: 14px !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.3px !important;
+            transition: all 0.4s var(--ease-smooth) !important;
+            box-shadow: var(--shadow-md) !important;
+            backdrop-filter: blur(10px) !important;
+            position: relative !important;
+            overflow: hidden !important;
+        }
+
+        button:not(.home-button):not(.pdf-upload-section button):not(.question-nav-btn):hover {
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple)) !important;
+            box-shadow: var(--glow-blue), var(--shadow-lg) !important;
+            border-color: var(--neon-blue) !important;
+            transform: translateY(-2px) scale(1.01) !important;
+            color: white !important;
+        }
+
+        /* Enhanced Filter Button */
+        .filter-btn {
+            background: linear-gradient(135deg, var(--neon-purple), #7c3aed) !important;
+            border: 2px solid rgba(139, 92, 246, 0.4) !important;
+            box-shadow: var(--glow-purple), var(--shadow-md) !important;
+        }
+
+        .filter-btn:hover {
+            background: linear-gradient(135deg, #a855f7, #8b5cf6) !important;
+            box-shadow: 0 0 40px rgba(139, 92, 246, 0.8), var(--shadow-xl) !important;
+        }
+
+        /* Ultra-Enhanced Navigation Buttons */
+        .question-nav-btn {
+            background: var(--bg-elevated) !important;
+            color: var(--text-secondary) !important;
+            border: 2px solid var(--border-primary) !important;
+            width: 48px !important;
+            height: 48px !important;
+            border-radius: 12px !important;
+            cursor: pointer !important;
+            font-weight: 700 !important;
+            font-size: 16px !important;
+            transition: all 0.3s var(--ease-sharp) !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            box-shadow: var(--shadow-sm) !important;
+            backdrop-filter: blur(10px) !important;
+        }
+
+        .question-nav-btn:hover {
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple)) !important;
+            color: white !important;
+            border-color: var(--neon-blue) !important;
+            box-shadow: var(--glow-blue), var(--shadow-md) !important;
+            transform: scale(1.1) !important;
+        }
+
+        .question-nav-btn.current {
+            background: linear-gradient(135deg, var(--neon-green), #00cc6a) !important;
+            color: white !important;
+            border-color: var(--neon-green) !important;
+            box-shadow: var(--glow-green), var(--shadow-lg) !important;
+            transform: scale(1.05) !important;
+        }
+
+        .question-nav-btn.answered {
+            background: linear-gradient(135deg, var(--neon-blue), #0099cc) !important;
+            color: white !important;
+            border-color: var(--neon-blue) !important;
+            box-shadow: var(--glow-blue), var(--shadow-md) !important;
+        }
+
+        .question-nav-btn.wrong {
+            background: linear-gradient(135deg, #ff4444, #cc0000) !important;
+            color: white !important;
+            border-color: #ff4444 !important;
+            box-shadow: 0 0 20px rgba(255, 68, 68, 0.4), var(--shadow-md) !important;
+        }
+
+        .question-nav-btn.flagged {
+            background: linear-gradient(135deg, var(--neon-orange), #ff8800) !important;
+            color: white !important;
+            border-color: var(--neon-orange) !important;
+            box-shadow: var(--glow-orange), var(--shadow-md) !important;
+        }
+
+        /* Ultra-Enhanced Input Fields */
+        input, select, textarea {
+            background: var(--bg-elevated) !important;
+            border: 2px solid var(--border-primary) !important;
+            border-radius: 12px !important;
+            color: var(--text-primary) !important;
+            padding: 14px 18px !important;
+            font-size: 14px !important;
+            font-weight: 500 !important;
+            transition: all 0.3s var(--ease-smooth) !important;
+            backdrop-filter: blur(10px) !important;
+            box-shadow: var(--shadow-sm) !important;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none !important;
+            border-color: var(--neon-blue) !important;
+            box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.15), var(--glow-blue) !important;
+            transform: translateY(-1px) !important;
+        }
+
+        /* Ultra-Enhanced Cards and Containers */
+        .stats, .question, /* Enhanced Session Item Styles with Loaded State */
+.session-item {
+    background: var(--bg-card) !important;
+    border: 2px solid var(--border-primary) !important;
+    border-radius: 16px !important;
+    box-shadow: var(--shadow-lg) !important;
+    backdrop-filter: blur(20px) !important;
+    padding: 16px !important;
+    margin: 12px 0 !important;
+    transition: all 0.4s var(--ease-smooth) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* Green fill for loaded session */
+.session-item.loaded {
+    background: linear-gradient(135deg, rgba(0, 255, 136, 0.15), rgba(0, 212, 255, 0.1)) !important;
+    border: 2px solid var(--neon-green) !important;
+    box-shadow: var(--glow-green), var(--shadow-lg) !important;
+}
+
+.session-item.loaded::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--neon-green), var(--neon-blue));
+    opacity: 1;
+}
+
+/* Light red tint for delete button */
+.session-item .delete-btn {
+    background: linear-gradient(135deg, rgba(255, 68, 68, 0.8), rgba(204, 0, 0, 0.7)) !important;
+    color: white !important;
+    border: 1px solid rgba(255, 68, 68, 0.5) !important;
+    padding: 6px 12px !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    font-weight: 600 !important;
+    font-size: 12px !important;
+    transition: all 0.3s var(--ease-smooth) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.session-item .delete-btn:hover {
+    background: linear-gradient(135deg, rgba(255, 85, 85, 0.9), rgba(221, 0, 0, 0.8)) !important;
+    border-color: rgba(255, 68, 68, 0.8) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 8px rgba(255, 68, 68, 0.3) !important;
+}
+
+/* Update button styles to ensure text visibility */
+.session-item .load-btn,
+.session-item .update-btn,
+.session-item .delete-btn {
+    padding: 6px 12px !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    font-size: 12px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.3px !important;
+    transition: all 0.3s var(--ease-smooth) !important;
+    backdrop-filter: blur(10px) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    color: white !important;
+    border: 1px solid transparent !important;
+}
+
+.session-item .load-btn {
+    background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple)) !important;
+    border-color: rgba(0, 212, 255, 0.3) !important;
+}
+
+.session-item .load-btn:hover {
+    background: linear-gradient(135deg, #00b8e6, #7c3aed) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 8px rgba(0, 212, 255, 0.3) !important;
+}
+
+.session-item .update-btn {
+    background: linear-gradient(135deg, var(--neon-green), #00cc6a) !important;
+    border-color: rgba(0, 255, 136, 0.3) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+}
+
+.session-item .update-btn:hover {
+    background: linear-gradient(135deg, #00e699, #00b359) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 8px rgba(0, 255, 136, 0.3) !important;
+}
+        .stats::before, .question::before, .session-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-green), var(--neon-purple));
+            opacity: 0;
+            transition: opacity 0.3s var(--ease-smooth);
+        }
+
+        .stats:hover, .question:hover, .session-item:hover {
+            border-color: var(--neon-blue) !important;
+            box-shadow: var(--glow-blue), var(--shadow-xl) !important;
+            transform: translateY(-4px) !important;
+        }
+
+        .stats:hover::before, .question:hover::before, .session-item:hover::before {
+            opacity: 1;
+        }
+
+        /* Enhanced Typography */
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--text-primary) !important;
+            font-weight: 800 !important;
+            line-height: 1.2 !important;
+            margin-bottom: 16px !important;
+        }
+
+        h1 { font-size: 2.5rem !important; }
+        h2 { font-size: 2rem !important; }
+        h3 { font-size: 1.5rem !important; }
+
+        p, span, div {
+            color: var(--text-secondary) !important;
+        }
+
+        /* Enhanced Progress Bars */
+        .progress-bar {
+            background: var(--bg-elevated) !important;
+            border-radius: 20px !important;
+            overflow: hidden !important;
+            box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.3) !important;
+            border: 1px solid var(--border-primary) !important;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, var(--neon-green), var(--neon-blue)) !important;
+            height: 100% !important;
+            border-radius: 20px !important;
+            transition: width 0.6s var(--ease-smooth) !important;
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.6) !important;
+            position: relative !important;
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Enhanced Tables */
+        table {
+            width: 100% !important;
+            border-collapse: collapse !important;
+            background: var(--bg-card) !important;
+            border-radius: 12px !important;
+            overflow: hidden !important;
+            box-shadow: var(--shadow-lg) !important;
+        }
+
+        th, td {
+            padding: 16px !important;
+            border: 1px solid var(--border-primary) !important;
+            color: var(--text-primary) !important;
+        }
+
+        th {
+            background: var(--bg-elevated) !important;
+            font-weight: 700 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.5px !important;
+        }
+
+        /* Enhanced Scrollbars */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+            border-radius: 6px;
+            border: 2px solid var(--bg-secondary);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #00b8e6, #7c3aed);
+        }
+
+        /* Enhanced Loading States */
+        .loading {
+            background: linear-gradient(90deg, var(--bg-elevated), var(--bg-surface), var(--bg-elevated));
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* Responsive Enhancements */
+        @media (max-width: 768px) {
+            .home-button {
+                top: 10px !important;
+                right: 10px !important;
+                padding: 10px 16px !important;
+                font-size: 12px !important;
+            }
+
+            .pdf-upload-section {
+                padding: 20px !important;
+                margin: 15px 0 !important;
+            }
+
+            .stats, .question, .session-item {
+                padding: 16px !important;
+            }
+        }
+
+        /* Home Button Styles (moved to right side) */
+        .home-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+            color: white;
+            border: none;
+            
+            cursor: pointer;
+            text-decoration: none;
+            
+            z-index: 1000;
+        }
+
+        .home-button:hover {
+            background: linear-gradient(135deg, #00b8e6, #7c3aed);
+        }
+
+        /* PDF Upload Section */
+        .pdf-upload-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 2px dashed var(--neon-blue);
+            
+            text-align: center;
+            background: var(--bg-card);
+        }
+
+        .pdf-upload-section input[type="file"] {
+            margin: 10px;
+            padding: 5px;
+        }
+
+        .pdf-upload-section button {
+            background: linear-gradient(135deg, var(--neon-green), #00cc6a);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        .pdf-upload-section button:hover {
+            background: linear-gradient(135deg, #00e699, #00b359);
+        }
+
+        /* PDF Viewer */
+        .pdf-viewer {
+            width: 100%;
+            height: 80vh;
+            border: 2px solid var(--border-primary);
+            margin: 20px 0;
+            display: none;
+        }
+
+        .pdf-viewer iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Question Layout - Left sidebar with question numbers and buttons */
+        .quiz-layout {
+            display: flex;
+            gap: 20px;
+        }
+
+        .question-sidebar {
+            width: 200px;
+            position: fixed;
+            left: 20px;
+            top: 130px;
+            height: calc(100vh - 150px);
+            overflow-y: auto;
+            border-right: 1px solid #ddd;
+            padding-right: 20px;
+         background: #222; box-shadow: 2px 0 5px rgba(0,0,0,0.7); color: white; }
+
+        .question-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 8px;
+            margin: 4px 0;
+            border: 1px solid #444;
+            border-radius: 8px;
+            background: #2a2a2a;
+            transition: all 0.3s ease;
+        }
+
+        .question-item:hover {
+            background: #333;
+            border-color: #555;
+            transform: translateX(2px);
+        }
+
+        .question-number {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    background: linear-gradient(135deg, #4a90e2, #357abd);
+    color: white;
+    border-radius: 50%;
+    font-size: 14px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    text-align: center;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+        .question-buttons {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .flag-btn {
+            background: linear-gradient(135deg, #ff4444, #cc0000);
+            color: white;
+        }
+
+        .flag-btn:hover {
+            background: linear-gradient(135deg, #ff5555, #dd0000);
+        }
+
+        /* Main content area */
+       .main-content {
+    margin-left: 240px !important;
+    padding: 20px 20px 20px 0 !important;
+    width: calc(100% - 240px) !important;
+}
+/* Ensure question sidebar stays fixed */
+.question-sidebar {
+    width: 200px !important;
+    position: fixed !important;
+    left: 20px !important;
+    top: 130px !important;
+    height: calc(100vh - 150px) !important;
+    z-index: 10 !important;
+}
+
+        /* Existing styles from original file */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--text-primary);
+        }
+
+      .container {
+    display: flex !important;
+    gap: 20px !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+}
+
+       .questions {
+    flex: 2 !important;
+    max-height: 70vh;
+    overflow-y: auto;
+    padding-right: 20px;
+    min-width: 500px !important;
+}
+
+        .stats {
+    flex: 1 !important;
+    border: 2px solid var(--border-primary);
+    border-radius: 8px;
+    padding: 20px;
+    background: var(--bg-elevated);
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+    min-width: 300px !important;
+    max-width: 400px !important;
+    box-sizing: border-box;
+}
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+       .accuracy-bar {
+    width: 100%;
+    height: 40px;
+    background: var(--bg-surface);
+    border-radius: 20px;
+    position: relative;
+    margin-bottom: 25px;
+    overflow: hidden;
+    border: 2px solid var(--border-primary);
+    box-shadow: var(--shadow-md);
+}
+
+.accuracy-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ff4444 0%, #ffaa00 50%, #00aa00 100%);
+    border-radius: 20px;
+    width: 0%;
+    transition: width 0.5s ease;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+}
+
+.accuracy-percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--text-primary);
+    font-weight: 800;
+    font-size: 18px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    z-index: 2;
+}
+
+.accuracy-label {
+    position: absolute;
+    top: -25px;
+    left: 0;
+    color: var(--text-primary);
+    font-weight: 700;
+    font-size: 16px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background: var(--bg-surface);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .timer {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .save-btn, .reset-btn, .new-session-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .save-btn {
+            background: linear-gradient(135deg, var(--neon-green), #00cc6a);
+            color: white;
+        }
+
+        .reset-btn {
+            background: linear-gradient(135deg, var(--neon-orange), #ff8800);
+            color: black;
+        }
+
+        .new-session-btn {
+            background: linear-gradient(135deg, var(--neon-blue), #0099cc);
+            color: white;
+        }
+
+        .save-btn:hover {
+            background: linear-gradient(135deg, #00e699, #00b359);
+        }
+
+        .reset-btn:hover {
+            background: linear-gradient(135deg, #ffcc00, #ff9900);
+        }
+
+        .new-session-btn:hover {
+            background: linear-gradient(135deg, #00ccff, #0088bb);
+        }
+
+        .saved-sessions {
+            margin-top: 20px;
+        }
+
+        .session-item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            
+            background: var(--bg-card);
+            position: relative;
+        }
+
+        .session-item h4 {
+            margin: 0 0 10px 0;
+        }
+
+        .session-controls {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .load-btn, .delete-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+        .load-btn {
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+            color: white;
+        }
+
+        .delete-btn {
+            background: linear-gradient(135deg, #ff4444, #cc0000);
+            color: white;
+        }
+
+        .load-btn:hover {
+            background: linear-gradient(135deg, #00b8e6, #7c3aed);
+        }
+
+        .delete-btn:hover {
+            background: linear-gradient(135deg, #ff5555, #dd0000);
+        }
+
+        .dark-mode {
+            background: var(--bg-elevated);
+            color: white;
+        }
+
+        .dark-mode .question {
+            background: var(--bg-surface);
+            border-color: #555;
+            color: white;
+        }
+
+        .dark-mode .stats {
+            background: var(--bg-surface);
+            border-color: #555;
+            color: white;
+         width: 400px; max-width: 100%; box-sizing: border-box; }
+
+        .dark-mode h1 {
+            color: white;
+        }
+
+        .dark-mode .session-item {
+            background: var(--bg-surface);
+            border-color: #555;
+            color: white;
+        }
+
+        .dark-mode .pdf-upload-section {
+            background: var(--bg-surface);
+            border-color: #555;
+            color: white;
+        }
+    
+body.dark-mode { background-color: #121212; padding-left: 240px; margin: 0; height: 100vh; overflow-x: hidden; }
+        /* Highlight for currently loaded session */
+        .session-item.loaded {
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+            color: white;
+            border-color: #0056b3;
+        }
+        .session-item.loaded input {
+            color: white;
+        }
+        /* Enhanced flag button - change from red to gray */
+        .flag-btn {
+            background: linear-gradient(135deg, var(--bg-elevated), #404040);
+            color: white;
+        }
+
+        /* Enhanced button styles */
+
+        .flag-btn:hover {
+            background: linear-gradient(135deg, #505050, #666666);
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        /* Enhanced elegant button styles */
+        .question-buttons {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .question-buttons button {
+            padding: 8px 12px;
+            border: 2px solid transparent;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .question-buttons button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .question-buttons button:hover::before {
+            left: 100%;
+        }
+
+        /* Enhanced Right Button */
+
+        /* Enhanced Wrong Button */
+
+        /* Enhanced Flag Button */
+        .flag-btn {
+            background: linear-gradient(135deg, #6c757d 0%, #8d96a1 100%);
+            color: white;
+            border-color: #6c757d;
+        }
+
+        .flag-btn:hover {
+            background: linear-gradient(135deg, #5a6268 0%, #7a8289 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(108, 117, 125, 0.3);
+        }
+
+        .flag-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(108, 117, 125, 0.2);
+        }
+
+        /* Flagged state */
+        .flag-btn.flagged {
+            background: linear-gradient(135deg, #ff8c00 0%, #ffa500 100%) !important;
+            color: white;
+            border-color: #ff8c00;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 140, 0, 0.4); }
+            70% { box-shadow: 0 0 0 8px rgba(255, 140, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 140, 0, 0); }
+        }
+        .filter-btn {
+            width: 100%;
+            padding: 8px 12px;
+            background: #007bff;
+            color: white;
+            border: none;
+            
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: bold;
+            
+        }
+
+        .filter-btn:hover {
+            background: #0056b3;
+        }
+
+        .filter-btn.active {
+            background: #dc3545;
+        }
+
+        .filter-btn.active:hover {
+            background: #c82333;
+        }
+
+        .right-btn {
+            padding: 10px 15px;
+            border: 3px solid #28a745;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            color: #28a745;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            min-width: 50px;
+            box-shadow: 0 4px 8px rgba(40, 167, 69, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .right-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(40, 167, 69, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .right-btn:hover {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            transform: translateY(-5px) scale(1.08);
+            box-shadow: 0 8px 20px rgba(40, 167, 69, 0.4);
+            border-color: #20c997;
+        }
+
+        .right-btn:hover:before {
+            left: 100%;
+        }
+
+        .right-btn:active {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+        }
+
+        .wrong-btn {
+            padding: 10px 15px;
+            border: 3px solid #dc3545;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            color: #dc3545;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            min-width: 50px;
+            box-shadow: 0 4px 8px rgba(220, 53, 69, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wrong-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(220, 53, 69, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .wrong-btn:hover {
+            background: linear-gradient(135deg, #dc3545 0%, #e85d75 100%);
+            color: white;
+            transform: translateY(-5px) scale(1.08);
+            box-shadow: 0 8px 20px rgba(220, 53, 69, 0.4);
+            border-color: #e85d75;
+        }
+
+        .wrong-btn:hover:before {
+            left: 100%;
+        }
+
+        .wrong-btn:active {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 4px 10px rgba(220, 53, 69, 0.3);
+        }
+        
+/* Editable Header Styles */
+.editable-header {
+    cursor: pointer;
+    border: 2px solid transparent;
+    
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    min-width: 300px;
+}
+
+.editable-header:hover {
+    border-color: #007bff;
+    background-color: rgba(0, 123, 255, 0.05);
+}
+
+.editable-header.editing {
+    border-color: #007bff;
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+.editable-header input {
+    background: transparent;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+    text-align: center;
+    width: 100%;
+    outline: none;
+}
+
+#main-header { display: block; margin: 0 auto; text-align: center; }
+
+.home-button { left: 20px !important; right: auto !important; top: 50% !important; transform: translateY(-50%) !important; }
+
+/* Home button fixed at right bottom */
+.home-button { top: auto !important; bottom: 20px !important; right: 20px !important; left: auto !important; transform: none !important; }
+
+        /* Additional Futuristic Polish */
+
+        /* Glassmorphism effect for key elements */
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Animated background particles */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 40% 30%, rgba(0, 212, 255, 0.3), transparent),
+                radial-gradient(2px 2px at 70% 20%, rgba(139, 92, 246, 0.3), transparent),
+                radial-gradient(1px 1px at 20% 60%, rgba(0, 255, 136, 0.3), transparent),
+                radial-gradient(1px 1px at 80% 80%, rgba(255, 107, 53, 0.3), transparent);
+            background-size: 300px 300px, 400px 400px, 200px 200px, 350px 350px;
+            background-position: 0 0, 100px 100px, 50px 50px, 150px 150px;
+            animation: particle-float 20s ease-in-out infinite;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        @keyframes particle-float {
+            0%, 100% { 
+                transform: translateY(0px) translateX(0px);
+                opacity: 0.3;
+            }
+            25% { 
+                transform: translateY(-20px) translateX(10px);
+                opacity: 0.5;
+            }
+            50% { 
+                transform: translateY(-10px) translateX(-10px);
+                opacity: 0.3;
+            }
+            75% { 
+                transform: translateY(-30px) translateX(5px);
+                opacity: 0.4;
+            }
+        }
+
+        /* Enhanced text selection */
+        ::selection {
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+            color: white;
+        }
+
+        ::-moz-selection {
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+            color: white;
+        }
+
+        /* Pulse animation for active elements */
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: var(--glow-blue);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(0, 212, 255, 0.8);
+            }
+        }
+
+        .pulse-active {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        /* Slide-up animation for cards */
+        @keyframes slide-up {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stats, .question, .session-item {
+            animation: slide-up 0.6s ease-out forwards;
+        }
+
+        /* Stagger the animations */
+        .stats:nth-child(1) { animation-delay: 0.1s; }
+        .stats:nth-child(2) { animation-delay: 0.2s; }
+        .stats:nth-child(3) { animation-delay: 0.3s; }
+
+        /* Enhanced focus indicators */
+        .focus-ring:focus {
+            outline: 3px solid var(--neon-blue);
+            outline-offset: 2px;
+            border-radius: 12px;
+        }
+
+        /* Modern tooltip styles */
+        [title]:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--bg-elevated);
+            color: var(--text-primary);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            white-space: nowrap;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-primary);
+            z-index: 1000;
+        }
+
+</style>
+</head>
+<body class="dark-mode">
+    <a href="index.html" class="home-button">Home</a>
+    
+    <h1 id="main-header" class="editable-header" onclick="makeEditable()" title="Click to edit">Mock 4</h1>
+   <!-- Total Accuracy Bar -->
+<div class="accuracy-bar">
+    <div class="accuracy-label">Overall Topic Accuracy</div>
+    <div class="accuracy-bar-fill" id="accuracy-progress"></div>
+    <div class="accuracy-percentage" id="accuracy-percentage">0%</div>
+</div>
+    
+    <!-- PDF Upload Section -->
+    <div class="pdf-upload-section">
+        <h3>Upload PDF Question Bank Everytime when you open</h3>
+        <input type="file" id="pdf-upload" accept=".pdf">
+        <button onclick="loadPDF()">Load PDF</button>
+        <button onclick="closePDF()">Close PDF</button>
+    </div>
+    
+    <!-- PDF Viewer -->
+    <div class="pdf-viewer" id="pdf-viewer">
+        <iframe id="pdf-frame" src=""></iframe>
+    </div>
+    
+    <label for="num-questions">Select Number of Questions: </label>
+    <input type="number" id="num-questions" min="1" value="10">
+    <button onclick="loadQuiz()">Set</button>
+
+    <div class="quiz-layout">
+        <!-- Question Sidebar -->
+                    <!-- Filter button for wrong answers -->
+            <div class="filter-section" style="width: 200px; position: fixed; left: 20px; top: 70px; padding: 10px; background: #222;  margin-bottom: 10px;">
+                <button id="wrong-filter-btn" onclick="toggleWrongFilter()" class="filter-btn">Show Wrong Only</button>
+            </div>
+            <div class="question-sidebar" id="question-sidebar">
+            <!-- Question numbers and buttons will be populated here -->
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="container">
+                <div class="questions" id="quiz-container"></div>
+                <div class="stats">
+                    <h2 id="stats-title">Score Stats</h2>
+                    <p><strong>Total Questions:</strong> <span id="total-questions">0</span></p>
+                    <p><strong>Questions Attempted:</strong> <span id="attempted">0</span></p>
+                    <p><strong>Right Answers:</strong> <span id="right-count">0</span></p>
+                    <p><strong>Wrong Answers:</strong> <span id="wrong-count">0</span></p>
+                    <p><strong>Score Percentage:</strong> <span id="percentage">0%</span></p>
+                    <div class="progress-bar">
+                        <div class="progress-bar-fill" id="progress-bar-fill"></div>
+                    </div>
+                    <div class="timer">Time Spent: <span id="timer">00:00</span></div>
+                    <button class="save-btn" onclick="saveSession()">Save Session</button>
+                    <button class="reset-btn" onclick="confirmReset()">Reset</button>
+                    <button class="new-session-btn" onclick="confirmResetQuiz()">New Clean Session</button>
+                    
+                    <div class="saved-sessions">
+                        <h3>Saved Sessions</h3>
+                        <div id="saved-sessions-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let sessions = JSON.parse(localStorage.getItem("sessions_mock_4")) || [];
+        // PDF storage for sessions
+        let sessionPdfStorage = {};
+        let currentLoadedSession = -1;
+        let answers = [];
+        let pageNumbers = [];
+        let flagged = [];
+        let notes = [];  // Array to store notes for each question
+
+        // Timer variables
+        let startTime = Date.now();
+        let timerInterval;
+
+        // Render all saved sessions on page load
+        renderSavedSessions();
+        updateTotalAccuracy();
+        startTimer();
+// Force dark mode permanently
+document.body.classList.add("dark-mode");
+        // PDF handling functions
+        
+        // Convert file to base64
+        function fileToBase64(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = () => resolve(reader.result);
+                reader.onerror = error => reject(error);
+            });
+        }
+
+        function loadPDF() {
+            const fileInput = document.getElementById('pdf-upload');
+            const file = fileInput.files[0];
+            
+            if (file && file.type === 'application/pdf') {
+                const fileURL = URL.createObjectURL(file);
+                document.getElementById('pdf-frame').src = fileURL;
+                document.getElementById('pdf-viewer').style.display = 'block';
+            } else {
+                alert('Please select a valid PDF file');
+            }
+        }
+
+        function closePDF() {
+            document.getElementById('pdf-viewer').style.display = 'none';
+            document.getElementById('pdf-frame').src = '';
+        }
+
+        function loadQuiz(questionCount = null) {
+            let totalQuestions = questionCount || document.getElementById("num-questions").value;
+            document.getElementById("num-questions").value = totalQuestions;
+            document.getElementById("total-questions").textContent = totalQuestions;
+            const quizContainer = document.getElementById("quiz-container");
+            const questionSidebar = document.getElementById("question-sidebar");
+            
+            quizContainer.innerHTML = "";
+            questionSidebar.innerHTML = "";
+
+            // Reset arrays when loading a new quiz
+            answers = [];
+            pageNumbers = new Array(parseInt(totalQuestions)).fill("");
+            flagged = new Array(parseInt(totalQuestions)).fill(false);
+            notes = new Array(parseInt(totalQuestions)).fill("");  // Initialize notes array
+
+            // Create question blocks and sidebar items
+            for (let i = 1; i <= totalQuestions; i++) {
+                // Create main question block (without A, B, C options)
+                let questionBlock = document.createElement("div");
+                questionBlock.classList.add("question");
+                questionBlock.innerHTML = `
+                    <div class="question-text">Question ${i}:</div>
+                    <textarea placeholder="Enter your notes or answer here..." rows="4" style="width: 100%; margin-top: 10px;" oninput="updateNote(${i}, this.value)"></textarea>
+                    <div style="margin-top: 10px;">
+                        <label for="page-${i}">Page Number: </label>
+                        <input type="text" id="page-${i}" placeholder="Page #" style="width: 80px;" onchange="updatePageNumber(${i}, this.value)">
+                    </div>
+                `;
+                quizContainer.appendChild(questionBlock);
+
+                // Create sidebar item
+                let sidebarItem = document.createElement("div");
+                sidebarItem.classList.add("question-item");
+                sidebarItem.innerHTML = `
+                    <div class="question-number">${i}</div>
+                    <div class="question-buttons">
+                        <button class="right-btn" onclick="markAnswer(${i}, 'right')">✓</button>
+                        <button class="wrong-btn" onclick="markAnswer(${i}, 'wrong')">✗</button>
+                    </div>
+                `;
+                questionSidebar.appendChild(sidebarItem);
+            }
+
+            resetStats();
+        }
+
+                // Auto-save for loaded session
+        function autoSaveLoadedSession() {
+            if (currentLoadedSession >= 0 && sessions[currentLoadedSession]) {
+                const session = sessions[currentLoadedSession];
+                session.answers = [...answers];
+                session.pageNumbers = [...pageNumbers];
+                session.flagged = [...flagged];
+                session.notes = [...notes];
+                session.attempted = answers.filter(answer => answer !== undefined).length;
+                session.rightCount = answers.filter(answer => answer === "right").length;
+                session.percentage = session.attempted > 0 ? Math.round((session.rightCount / session.attempted) * 100) : 0;
+                session.timeSpent = document.getElementById('timer').textContent;
+                session.timestamp = new Date().toLocaleString();
+                // Update PDF data for current session
+                if (sessionPdfStorage[currentLoadedSession]) {
+                    session.pdfData = sessionPdfStorage[currentLoadedSession];
+                }
+                localStorage.setItem("sessions_mock_4", JSON.stringify(sessions));
+                updateTotalAccuracy();
+            }
+        }
+
+        function markAnswer(questionNum, result) {
+            answers[questionNum - 1] = result;
+            updateStats();
+
+            // Visual feedback with clearer colors
+            const sidebarItem = document.querySelector(`.question-item:nth-child(${questionNum})`);
+            sidebarItem.style.backgroundColor = result === 'right' ? '#28a745' : '#dc3545';
+            sidebarItem.style.color = 'white';
+
+            autoSaveLoadedSession();
+        }
+
+        function toggleFlag(questionNum) {
+            flagged[questionNum - 1] = !flagged[questionNum - 1];
+            const flagBtn = document.querySelector(`.question-item:nth-child(${questionNum}) .flag-btn`);
+
+            if (flagged[questionNum - 1]) {
+                flagBtn.classList.add('flagged');
+                flagBtn.style.backgroundColor = '#ff8c00';
+                autoSaveLoadedSession();
+        } else {
+                flagBtn.classList.remove('flagged');
+                flagBtn.style.backgroundColor = '#6c757d';
+            }
+        }
+
+        function updatePageNumber(questionNum, pageNum) {
+            pageNumbers[questionNum - 1] = pageNum;
+            autoSaveLoadedSession();  // Auto-save when page number is updated
+        }
+
+        function updateNote(questionNum, noteValue) {
+            notes[questionNum - 1] = noteValue;
+            autoSaveLoadedSession();  // Auto-save when note is updated
+        }
+
+                // Calculate and update total accuracy from all saved sessions
+        function updateTotalAccuracy() {
+            let totalAttempted = 0;
+            let totalRight = 0;
+
+            // Add up all saved sessions ONLY
+            sessions.forEach(session => {
+                if (session.attempted && session.rightCount) {
+                    totalAttempted += session.attempted;
+                    totalRight += session.rightCount;
+                }
+            });
+
+            const totalAccuracy = totalAttempted > 0 ? Math.round((totalRight / totalAttempted) * 100) : 0;
+
+            // Update the total accuracy bar
+            document.getElementById("accuracy-progress").style.width = totalAccuracy + "%";
+            document.getElementById("accuracy-percentage").textContent = totalAccuracy + "%";
+        }
+
+        function updateStats() {
+            const attempted = answers.filter(answer => answer !== undefined).length;
+            const rightCount = answers.filter(answer => answer === "right").length;
+            const wrongCount = answers.filter(answer => answer === "wrong").length;
+            const percentage = attempted > 0 ? Math.round((rightCount / attempted) * 100) : 0;
+
+            document.getElementById("attempted").textContent = attempted;
+            document.getElementById("right-count").textContent = rightCount;
+            document.getElementById("wrong-count").textContent = wrongCount;
+            document.getElementById("percentage").textContent = percentage + "%";
+
+            // Update progress bars
+            const totalQuestions = parseInt(document.getElementById("total-questions").textContent);
+            const progressPercentage = (attempted / totalQuestions) * 100;
+            document.getElementById("progress-bar-fill").style.width = progressPercentage + "%";
+            
+            // Update total accuracy bar (shows cumulative accuracy from all sessions)
+            updateTotalAccuracy();
+        }
+
+        function resetStats() {
+            document.getElementById("attempted").textContent = "0";
+            document.getElementById("right-count").textContent = "0";
+            document.getElementById("wrong-count").textContent = "0";
+            document.getElementById("percentage").textContent = "0%";
+            document.getElementById("progress-bar-fill").style.width = "0%";
+            document.getElementById("accuracy-progress").style.width = "0%";
+            document.getElementById("accuracy-percentage").textContent = "0%";
+            
+            // Reset timer
+            startTime = Date.now();
+        }
+
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                const elapsed = Date.now() - startTime;
+                const minutes = Math.floor(elapsed / 60000);
+                const seconds = Math.floor((elapsed % 60000) / 1000);
+                document.getElementById("timer").textContent = 
+                    `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }, 1000);
+        }
+
+       function saveSession() {
+    const sessionName = prompt("Enter session name:");
+    if (!sessionName) return;
+
+    const totalQuestions = parseInt(document.getElementById("total-questions").textContent);
+    const attempted = answers.filter(answer => answer !== undefined).length;
+    const rightCount = answers.filter(answer => answer === "right").length;
+    const percentage = attempted > 0 ? Math.round((rightCount / attempted) * 100) : 0;
+
+    const session = {
+        name: sessionName,
+        timestamp: new Date().toLocaleString(),
+        totalQuestions: totalQuestions,
+        answers: [...answers],
+        pageNumbers: [...pageNumbers],
+        flagged: [...flagged],
+        attempted: attempted,
+        rightCount: rightCount,
+        percentage: percentage,
+        timeSpent: document.getElementById("timer").textContent,
+        notes: [...notes],
+        pdfData: currentLoadedSession >= 0 && sessionPdfStorage[currentLoadedSession] ? sessionPdfStorage[currentLoadedSession] : null
+    };
+
+    sessions.push(session);
+    localStorage.setItem("sessions_mock_4", JSON.stringify(sessions));
+    
+    // Set the newly saved session as loaded
+    currentLoadedSession = sessions.length - 1;
+    
+    renderSavedSessions();
+    alert("Session saved successfully!");
+    updateTotalAccuracy();
+}
+
+       function loadSession(index) {
+    const session = sessions[index];
+    if (!session) return;
+
+    // Set current loaded session
+    currentLoadedSession = index;
+
+    document.getElementById("num-questions").value = session.totalQuestions;
+    loadQuiz(session.totalQuestions);
+    
+    answers = [...session.answers];
+    pageNumbers = [...session.pageNumbers];
+    flagged = [...session.flagged];
+    notes = session.notes ? [...session.notes] : new Array(session.totalQuestions).fill("");
+
+    // Restore page numbers
+    session.pageNumbers.forEach((pageNum, i) => {
+        if (pageNum) {
+            const pageInput = document.getElementById(`page-${i + 1}`);
+            if (pageInput) {
+                pageInput.value = pageNum;
+            }
+        }
+    });
+
+    // Restore visual states
+    answers.forEach((answer, i) => {
+        if (answer) {
+            const sidebarItem = document.querySelector(`.question-item:nth-child(${i + 1})`);
+            if (sidebarItem) {
+                sidebarItem.style.backgroundColor = answer === 'right' ? '#28a745' : '#dc3545';
+                sidebarItem.style.color = 'white';
+            }
+        }
+    });
+
+    flagged.forEach((isFlagged, i) => {
+        if (isFlagged) {
+            const flagBtn = document.querySelector(`.question-item:nth-child(${i + 1}) .flag-btn`);
+            if (flagBtn) {
+                flagBtn.classList.add('flagged');
+                flagBtn.style.backgroundColor = '#ff8c00';
+            }
+        }
+    });
+
+    updateStats();
+
+    // Restore notes to textareas
+    notes.forEach((note, i) => {
+        if (note) {
+            const textarea = document.querySelector(`.question:nth-child(${i + 1}) textarea`);
+            if (textarea) {
+                textarea.value = note;
+            }
+        }
+    });
+
+    // Highlight loaded session and update title
+    document.getElementById('stats-title').textContent = `Score Stats: ${sessions[index].name}`;
+
+    // Re-render sessions to update the visual loaded state
+    renderSavedSessions();
+
+    // Restore PDF for this session only
+    if (session.pdfData) {
+        document.getElementById('pdf-frame').src = session.pdfData.data;
+        document.getElementById('pdf-viewer').style.display = 'block';
+        sessionPdfStorage[index] = session.pdfData;
+    } else {
+        document.getElementById('pdf-viewer').style.display = 'none';
+        document.getElementById('pdf-frame').src = '';
+    }
+}
+
+        function deleteSession(index) {
+            if (confirm("Are you sure you want to delete this session?")) {
+                sessions.splice(index, 1);
+                localStorage.setItem("sessions_mock_4", JSON.stringify(sessions));
+                renderSavedSessions();
+                updateTotalAccuracy();
+            }
+        }
+
+        function updateSessionName(sessionIndex, newName) {
+            if (newName && newName.trim() !== "") {
+                sessions[sessionIndex].name = newName.trim();
+                localStorage.setItem("sessions_mock_4", JSON.stringify(sessions));
+                if (sessionIndex === currentLoadedSession) {
+                    document.getElementById("stats-title").textContent = `Score Stats: ${newName.trim()}`;
+                }
+            }
+        }
+
+        function updateSession(sessionIndex) {
+            const session = sessions[sessionIndex];
+
+            // Confirmation dialog with session name
+            if (confirm(`Confirm to update this into: ${session.name}`)) {
+                // Update session with current data
+                session.answers = [...answers];
+                session.pageNumbers = [...pageNumbers];
+                session.flagged = [...flagged];
+                session.attempted = answers.filter(answer => answer !== null).length;
+                session.rightCount = answers.filter(answer => answer === "right").length;
+                session.percentage = session.attempted > 0 ? Math.round((session.rightCount / session.attempted) * 100) : 0;
+                session.timeSpent = document.getElementById('timer').textContent;
+                session.timestamp = new Date().toLocaleString();
+
+                localStorage.setItem("sessions_mock_4", JSON.stringify(sessions));
+                renderSavedSessions();
+                updateTotalAccuracy();
+                alert(`Session "${session.name}" updated successfully!`);
+            }
+        }
+function renderSavedSessions() {
+    const container = document.getElementById("saved-sessions-container");
+    container.innerHTML = "";
+
+    sessions.forEach((session, index) => {
+        const sessionDiv = document.createElement("div");
+        sessionDiv.classList.add("session-item");
+        
+        // Add 'loaded' class if this is the current loaded session
+        if (index === currentLoadedSession) {
+            sessionDiv.classList.add('loaded');
+        }
+        
+        sessionDiv.innerHTML = `
+            <input type="text" value="${session.name}" onblur="updateSessionName(${index}, this.value)" onkeypress="if(event.key==='Enter') this.blur()" style="background: transparent; border: none; font-size: 16px; font-weight: bold; color: inherit; width: 100%; padding: 2px; margin-bottom: 8px;">
+            <div class="session-controls">
+                <button class="load-btn" onclick="loadSession(${index})">Load</button>
+                <button class="update-btn" onclick="updateSession(${index})">Update</button>
+                <button class="delete-btn" onclick="deleteSession(${index})">Delete</button>
+            </div>
+        `;
+        container.appendChild(sessionDiv);
+    });
+}
+        function confirmReset() {
+            if (confirm("Are you sure you want to reset the current session? This will clear all answers.")) {
+                answers = [];
+                pageNumbers = [];
+                flagged = [];
+                
+                // Reset visual states
+                document.querySelectorAll('.question-item').forEach(item => {
+                    item.style.backgroundColor = '';
+                });
+                
+                document.querySelectorAll('.flag-btn').forEach(btn => {
+                    btn.style.backgroundColor = '#dc3545';
+                });
+                
+                resetStats();
+            }
+        }
+
+       function confirmResetQuiz() {
+    if (confirm("Are you sure you want to start a new clean session? This will reset everything.")) {
+        // Reset current loaded session
+        currentLoadedSession = -1;
+        
+        document.getElementById("quiz-container").innerHTML = "";
+        document.getElementById("question-sidebar").innerHTML = "";
+        answers = [];
+        pageNumbers = [];
+        flagged = [];
+        resetStats();
+        
+        // Update sessions display to remove loaded state
+        renderSavedSessions();
+    }
+}
+
+       
+
+       // Initialize with default quiz
+window.onload = function() {
+    loadSavedHeaderText(); // Load saved header text
+    loadQuiz(10);
+};
+        // Filter functionality for wrong answers
+        let showingWrongOnly = false;
+
+        function toggleWrongFilter() {
+            const filterBtn = document.getElementById('wrong-filter-btn');
+            const questionItems = document.querySelectorAll('.question-item');
+
+            showingWrongOnly = !showingWrongOnly;
+
+            if (showingWrongOnly) {
+                // Show only wrong answers
+                filterBtn.textContent = 'Show All';
+                filterBtn.classList.add('active');
+
+                questionItems.forEach((item, index) => {
+                    const questionNum = index + 1;
+                    const answer = answers[index];
+
+                    if (answer === 'wrong') {
+                        item.style.display = 'flex';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            } else {
+                // Show all questions
+                filterBtn.textContent = 'Show Wrong Only';
+                filterBtn.classList.remove('active');
+
+                questionItems.forEach(item => {
+                    item.style.display = 'flex';
+                });
+            }
+        }
+
+        // Function to update filter when answers change (called from markAnswer)
+        function updateFilterDisplay() {
+            if (showingWrongOnly) {
+                toggleWrongFilter();
+                toggleWrongFilter(); // Double toggle to refresh the filter
+            }
+        }
+    
+// Editable Header Functionality - Mock Exam 4
+let originalHeaderText = 'CFA Mock Exam 4';
+let isEditing = false;
+
+// Load saved header text on page load
+function loadSavedHeaderText() {
+    const savedHeader = localStorage.getItem('cfa_header_mock_4');
+    if (savedHeader) {
+        originalHeaderText = savedHeader;
+        document.getElementById('main-header').textContent = savedHeader;
+        document.title = savedHeader;
+    }
+}
+
+function makeEditable() {
+    if (isEditing) return;
+
+    isEditing = true;
+    const headerElement = document.getElementById('main-header');
+    const currentText = headerElement.textContent;
+
+    headerElement.classList.add('editing');
+
+    // Create input element
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.value = currentText;
+    input.className = 'header-input';
+
+    // Replace header content with input
+    headerElement.innerHTML = '';
+    headerElement.appendChild(input);
+
+    // Focus and select all text
+    input.focus();
+    input.select();
+
+    // Handle saving on Enter or blur
+    function saveEdit() {
+        const newText = input.value.trim();
+        if (newText && newText !== '') {
+            originalHeaderText = newText;
+            headerElement.textContent = newText;
+            // Save to localStorage with unique key
+            localStorage.setItem('cfa_header_mock_3', newText);
+            document.title = newText;
+        } else {
+            headerElement.textContent = originalHeaderText;
+        }
+
+        headerElement.classList.remove('editing');
+        isEditing = false;
+    }
+
+    // Save on Enter key
+    input.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            saveEdit();
+        } else if (event.key === 'Escape') {
+            headerElement.textContent = originalHeaderText;
+            headerElement.classList.remove('editing');
+            isEditing = false;
+        }
+    });
+
+    // Save on blur (clicking outside)
+    input.addEventListener('blur', saveEdit);
+}
+
+// Load saved header when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    loadSavedHeaderText();
+});
+</script>
+</body>
+</html>
